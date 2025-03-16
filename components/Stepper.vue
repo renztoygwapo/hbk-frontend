@@ -3,12 +3,10 @@ const items = [
   {
     slot: 'business',
     title: 'Business Details',
-    icon: 'i-lucide-house'
   },
   {
     slot: 'key',
     title: 'Key Contacts',
-    icon: 'i-lucide-truck'
   },
   {
     slot: 'profile',
@@ -17,12 +15,10 @@ const items = [
   {
     slot: 'key',
     title: 'Business Summary',
-    icon: 'i-lucide-truck'
   },
   {
     slot: 'key',
     title: 'Declaration Account',
-    icon: 'i-lucide-truck'
   },
 ]
 
@@ -31,7 +27,7 @@ const stepper = useTemplateRef('stepper')
 
 <template>
   <div class="w-full">
-    <UStepper ref="stepper" :items="items">
+    <UStepper disabled ref="stepper" :items="items">
       <template #content="{ item }">
         <Placeholder class="aspect-video">
           {{ item.title }}
