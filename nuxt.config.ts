@@ -9,5 +9,10 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/ui'
   ],
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL
+    }
+  },
 })

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const router = useRouter()
+const config = useRuntimeConfig()
+const apiBaseUrl = config.public.apiBaseUrl
 
 import StepOne from './StepOne.vue'
 import StepTwo from './StepTwo.vue'
@@ -59,7 +61,7 @@ const goToStep = (step) => {
 // **🔹 Submit Data to Backend**
 const handleSubmit = async () => {
   try {
-    const response = await $fetch('/api/submit-form', {
+    const response = await $fetch(`${apiBaseUrl}/api/submit-form`, {
       method: 'POST',
       body: formData,
     })

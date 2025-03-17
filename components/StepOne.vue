@@ -8,7 +8,7 @@ const schema = object({
   business_name: string().required('Business Name is Required'),
   registration_date: string().required('Registration Date is Required'),
   renewal_date: string().required('Renewal Date is Required'),
-  expiry_date: string().required('Expiration Date is Required'),
+  expiry_date: string().required('Expiration Date is Required')
 })
 
 // Sync form state
@@ -38,6 +38,10 @@ watch(state, validateForm, { deep: true })
     </UFormField>
     <UFormField label="Business Name" name="business_name" required>
       <UInput v-model="state.business_name" />
+    </UFormField>
+
+    <UFormField label="Is Premium" name="is_premium" required>
+      <UCheckbox v-model="state.is_premium" />
     </UFormField>
 
     <UFormField label="Registration Date" name="registration_date" required>
