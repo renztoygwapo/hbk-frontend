@@ -1,22 +1,29 @@
 <script setup lang="ts">
+import StepOne from './StepOne.vue';
+
 const items = [
   {
+    id: 1,
     slot: 'business',
     title: 'Business Details',
   },
   {
+    id: 2,
     slot: 'key',
     title: 'Key Contacts',
   },
   {
+    id: 3,
     slot: 'profile',
     title: 'Business Profile',
   },
   {
+    id: 4,
     slot: 'key',
     title: 'Business Summary',
   },
   {
+    id: 5,
     slot: 'key',
     title: 'Declaration Account',
   },
@@ -30,7 +37,10 @@ const stepper = useTemplateRef('stepper')
     <UStepper disabled ref="stepper" :items="items">
       <template #content="{ item }">
         <Placeholder class="aspect-video">
-          {{ item.title }}
+          <div class="mx-auto">
+            {{ item.id }}
+            <StepOne v-if="item.id === 1" />
+          </div>
         </Placeholder>
       </template>
     </UStepper>
