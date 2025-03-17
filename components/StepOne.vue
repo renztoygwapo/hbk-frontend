@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { object, string } from 'yup'
+import { boolean, object, string } from 'yup'
 
 const props = defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue', 'validate'])
@@ -33,6 +33,9 @@ watch(state, validateForm, { deep: true })
 
 <template>
   <UForm :schema="schema" :state="state" class="space-y-4">
+    <UFormField label="Status">
+      <USwitch v-model="state.status" />
+    </UFormField>
     <UFormField label="Business Name" name="business_name" required>
       <UInput v-model="state.business_name" />
     </UFormField>
